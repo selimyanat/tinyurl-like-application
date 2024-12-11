@@ -29,19 +29,32 @@ const theme: ThemeOptions = {
             fontWeight: "bold",
         },
     },
+    shape: {
+        borderRadius: 12, // Default border radius
+    },
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: "25px", // Rounded corners for all buttons
+                    borderRadius: "25px", // All buttons will have rounded corners
+                    padding: "12px 24px", // Standard button padding
                 },
             },
         },
-        MuiCard: {
+        MuiContainer: {
             styleOverrides: {
                 root: {
-                    borderRadius: "12px",
-                    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", // Subtle shadow for cards
+                    padding: "24px", // Default container padding
+                },
+            },
+        },
+        MuiTypography: {
+            styleOverrides: {
+                h4: {
+                    fontWeight: "bold",
+                    fontSize: "2rem",
+                    textAlign: "center",
+                    color: "#333",
                 },
             },
         },
