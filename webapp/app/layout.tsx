@@ -9,13 +9,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        {/* Add any metadata or links here if needed */}
         <title>URL Shortener</title>
       </head>
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          {children} {/* Render the content of the page */}
+          {children}
         </ThemeProvider>
       </body>
     </html>
