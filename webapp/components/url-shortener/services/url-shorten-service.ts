@@ -1,6 +1,17 @@
 export const shortenURL = async (longUrl: string): Promise<string> => {
-  if (longUrl === 'aaa') {
-    throw new Error('Invalid URL');
+  const response = await fetch('/api/url-shortener', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ longUrl }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.error || 'Failed to shorten URL');
   }
-  return 'should-be-a-shortened-url';
+
+  const data = await response.json();
+  return data.shortenedUrl;
 };
